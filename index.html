@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="nirvay-high-resolution-logo-transparent (1).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Nirvay</title>
+</head>
+<body>
+    <aside>
+        <div class="input"><input type="text" id="search-input" placeholder="Search Song..."></div>
+        <div class="artistinput" id="artistinput"><input type="text" class="artist-search" id="artist-search" placeholder="Search Artist..."></div>
+        <a href="#" class="currenta" onclick="toggleCurrent()" id="currenta">Current</a>
+        <a href="#" class="quickpicksa" onclick="toggleQuicks()" id="quickpicksa">Quick_Picks</a>
+        <a href="#" class="songsa" onclick="toggleSearch()" id="songsa">Songs</a>
+        <a href="#" class="playlistsa" onclick="toggleFavourite()" id="playlistsa">Favourites</a>
+        <a href="#" class="artistsa" onclick="toggleArtists()" id="artistsa">Artists</a>
+    </aside>
+    <div id="quickpicks">
+        <div id="quick-results">
+            <div class="heading">
+                <h3 onclick="performFetch()">Quick Picks</h3>
+            </div>
+        </div>
+        <div class="heading">
+            <h3>Related Artists</h3>
+        </div>
+        <div id="quick-artists"></div>
+        <div class="heading1">
+            <h3>Related Albums</h3>
+        </div>
+        <div id="quick-album"></div>
+    </div>
+    <div class="current-play" id="current-play">
+        <i id="lyrics" class="fa-solid fa-bars" onclick="toggleLyrics()"></i>
+        <div class="current-titles">
+            <h1 id="index"></h1>
+            <h2 id="current-id" style="display: none;">id</h2>
+            <h3>Nothing Playing</h3>
+            <p></p>
+            <audio id="current-audio" src="" controls autoplay></audio>
+            <input type="range" value="0" id="progress">
+            <div class="current-like">
+                <i id="prevsong" class="fa-solid fa-backward" onclick="playPreviousSongAutomatically()"></i>
+                <i id="likesong" class="fa-solid fa-heart"></i>
+                <i id="nextsong" class="fa-solid fa-forward" onclick="playNextSongAutomatically()"></i>
+            </div>
+            <div class="lyrics">
+                <p id="lyrics1">No Lyrics Found</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="search" id="search">
+        <h3>Search For Songs...</h3>
+    </div>
+
+    <div class="artistsdiv" id="artistsdiv">
+       
+        <img id="artistimg" src="sep12.jpg" alt="">
+        <h2 id="artistname" style="text-transform: capitalize;">Singer Name</h2>
+        <div class="artist-songs" id="artist-songs"></div>
+    </div>
+    <div class="albumdiv" id="albumdiv">
+    </div>
+    <div class="favourites" id="favourites">
+        <h3>Favourites</h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
